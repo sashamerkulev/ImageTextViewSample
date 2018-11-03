@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageTextView">
+        <attr name="left" format="boolean" />
+        <attr name="right" format="boolean" />
+        <attr name="top" format="boolean" />
+        <attr name="bottom" format="boolean" />
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="dividerColor" format="color" />
+        <attr name="image" format="reference" />
+        <attr name="imageColor" format="color" />
+        <attr name="imageSize" format="dimension" />
+        <attr name="imageMarginLeft" format="dimension" />
+        <attr name="textMarginRight" format="dimension" />
+        <attr name="imageTextSpace" format="dimension" />
+        <attr name="center" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImageTextViewSample</string>
+    <string name="discount">Скидка</string>
+    <string name="kitchen">Отправить на кухню</string>
+    <string name="client">Клиент</string>
+    <string name="to_bill">К оплате</string>
+</resources>
