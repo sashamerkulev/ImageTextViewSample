@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/topLayout"
-        android:layout_width="match_parent"
+    <merkulyevsasha.ru.imagetextviewsample.controls.ImageTextView
+        android:id="@+id/imageTextViewClient"
+        android:layout_width="0dp"
         android:layout_height="88dp"
-        android:layout_toStartOf="@+id/bill"
-        android:layout_toLeftOf="@+id/bill"
-        android:orientation="horizontal">
+        android:text="@string/client"
+        app:bottom="true"
+        app:image="@drawable/ic_client_icon_black_36dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageTextViewDiscount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:right="true" />
 
-        <merkulyevsasha.ru.imagetextviewsample.controls.ImageTextView
-            android:id="@+id/imageTextViewClient"
-            android:layout_width="0dp"
-            android:layout_height="88dp"
-            android:layout_weight="1"
-            android:text="@string/client"
-            app:bottom="true"
-            app:image="@drawable/ic_client_icon_black_36dp"
-            app:right="true" />
-
-        <merkulyevsasha.ru.imagetextviewsample.controls.ImageTextView
-            android:id="@+id/imageTextViewDiscount"
-            android:layout_width="0dp"
-            android:layout_height="88dp"
-            android:layout_weight="1"
-            android:text="@string/discount"
-            app:bottom="true"
-            app:image="@drawable/ic_discount_icon_black_36dp"
-            app:right="true" />
-    </LinearLayout>
+    <merkulyevsasha.ru.imagetextviewsample.controls.ImageTextView
+        android:id="@+id/imageTextViewDiscount"
+        android:layout_width="0dp"
+        android:layout_height="88dp"
+        android:text="@string/discount"
+        app:bottom="true"
+        app:image="@drawable/ic_discount_icon_black_36dp"
+        app:layout_constraintEnd_toStartOf="@+id/bill"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageTextViewClient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:right="true" />
 
     <merkulyevsasha.ru.imagetextviewsample.controls.ImageMarginView
         android:id="@+id/bill"
         android:layout_width="94dp"
         android:layout_height="88dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         app:bottom="true"
-        app:image="@drawable/ic_bill_icon_black_36dp" />
+        app:image="@drawable/ic_bill_icon_black_36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/imageTextViewKitchen"
-        android:layout_below="@+id/topLayout"
-        tools:listitem="@layout/item_product"
+        android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/imageTextViewKitchen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageTextViewClient"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_width="0dp"
+        tools:listitem="@layout/item_product" />
 
     <merkulyevsasha.ru.imagetextviewsample.controls.ImageTextView
         android:id="@+id/imageTextViewKitchen"
         android:layout_width="match_parent"
         android:layout_height="88dp"
-        android:layout_above="@+id/imageDots"
         android:text="@string/kitchen"
         app:image="@drawable/ic_kitchen_icon_black_36dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameToBill"
         app:top="true" />
 
     <merkulyevsasha.ru.imagetextviewsample.controls.ImageMarginView
         android:id="@+id/imageDots"
         android:layout_width="88dp"
         android:layout_height="88dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:background="@color/blood_orange"
         app:dividerColor="@color/black_38"
         app:image="@drawable/ic_dots_icon_white_36dp"
         app:imageColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:left="true" />
 
     <FrameLayout
         android:id="@+id/frameToBill"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="88dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/imageDots"
-        android:layout_toLeftOf="@+id/imageDots"
-        android:background="@color/blood_orange">
+        android:background="@color/blood_orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageDots"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -115,4 +115,4 @@
 
     </FrameLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
